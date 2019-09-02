@@ -1,0 +1,235 @@
+<!-- Done by Simran-->
+<html>
+<head>
+<title> Add Package </title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style>
+    .body{ width: 974px;
+        margin:0 auto;
+ }
+.bg
+{
+background-color:#00ADEF;
+}
+.headnav
+{
+height:110px;
+}
+.position
+{
+margin-left: 500px;
+}
+.input
+{
+width:400px;
+}
+    .right
+    {
+     text-align: right;
+     float:right;
+    }
+    .foot {
+color:royalblue;
+font-style: arial;
+}
+.row:after {
+content:"";
+display:table;
+clear:both;
+}
+.column
+{
+float:left;
+background-color:#00ADEF;
+width:33.33%;
+height:320px;
+} 
+
+.footer
+{
+position: fixed;
+left: 0;
+width: 100%; 
+text-align: center;
+}
+</style>
+ 
+</head>
+<body>
+    
+<!-- header of the page -->
+    
+<nav class="navbar navbar-default bg ">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav navbar-right container">
+        <span> Welcome! </span> <br> 
+      
+        <!-- modal sign in -->
+        
+	  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Log Out here!</h4>
+        </div>
+        <div class="modal-body">
+		<span> Do you want to log out? </span>
+          </div>
+          
+        <div class="modal-footer">
+            <a href="mainpage.html" > <button type="button" class="btn btn-success btn-md">Sign Out</button> </a><br> <br>
+            
+        </div>
+      </div>
+    </div>
+	
+        </div> 
+        
+        <li> 
+            <div class="btn-group dropright">
+            <button class="btn btn-info btn " class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Manage Packages
+            </button>
+      <div class="dropdown-menu">
+    <a class="dropdown-item" href="add.php">Add Package</a> <br>
+    <a class="dropdown-item" href="update.php">Update Package</a> <br>
+    <a class="dropdown-item" href="delete.php">Delete Package</a>
+                </div></div>
+      </li>  
+        <li> <a href="#"><span class="glyphicon glyphicon-log-in btn-info btn" data-toggle="modal" data-target="#myModal1">Log Out </span></a></li>
+    </ul>
+  </div>
+</nav>
+
+    <!-- second nav bar -->
+    
+<nav class="navbar navbar-default">
+  <div class="container-fluid position">
+  <div class="navbar-header">
+      <img class="navbar-brand headnav" src="pic.jpg" height="110" width="220">
+    </div>
+    <ul class="nav navbar-nav navbar-center ">
+      <li><a href="agentmain.php"> Home </a></li>
+      <li><a href="display.php"> Packages </a></li>
+	  <li><a href="#"> Rewards </a></li>
+	  <!--<li><a href="#"> About Us </a></li>-->
+	  <li><a href="contactus.php"> Contact Us </a></li>
+    </ul>
+  </div>
+</nav>
+<form method="post" class="body">
+    <div class="form-group">
+        <center> <h3> Add Package </h3> </center>
+    <label for="exampleFormControlInput1">Package Name</label>
+    <input type="text" class="form-control" name="pkg_name"> <br>
+        <label for="exampleFormControlInput1">Package Start Date</label>
+    <input type="date" class="form-control" name="pkg_st_date"> <br>
+        <label for="exampleFormControlInput1">Package End Date</label>
+    <input type="date" class="form-control" name="pkg_end_date"> <br>
+        <label for="exampleFormControlInput1">Package Description</label>
+    <input type="text" class="form-control" name="pkg_desc"> <br>
+        <label for="exampleFormControlInput1">Package Base Price</label>
+    <input type="text" class="form-control" name="pkg_b_price"> <br>
+         <label for="exampleFormControlInput1">Package Agency Commission</label>
+    <input type="text" class="form-control" name="pkg_a_comm"> <br>
+        <label for="exampleFormControlInput1"> Upload picture </label>
+        <input type="file" name="pic" > <br>
+        <input type="submit" value="Add" name="add">
+        <input type="reset" value="Reset">
+    </div>   
+    </form>
+    
+    <!-- Footer of the page -->
+    
+<div style="margin-bottom:0">
+  
+<div class="row">
+<div class="column">
+<h3 class="foot"> <img src="pic.jpg" height="120" width="200"> </h3>
+    <small> Real People. Real Deals. Why Book Anywhere Else?</small> <br><br>
+    <a href="https://www.facebook.com/"><img src="fb.jpg" height="50" width="50"></a>
+    <a href="https://www.twitter.com/"><img src="tw.jpg" height="50" width="50"></a>
+    <a href="https://www.instagram.com/"><img src="in.jpg" height="50" width="50"></a>
+</div>
+<div class="column">
+<h3 class="foot"> <img src="email.jpg" height="60" width="60"> </h3> 
+    <h4> Contact us via Email:</h4>
+    book@travelexperts.ca
+<h3 class="foot"> <img src="call.jpg" height="60" width="60"> </h3> 
+    <h4> Reach us via Phone:</h4>
+    Toll Free: 888-444-1111 <br>
+    111-111-111
+</div>
+    
+<div class="column">
+<h3 class="foot"> <img src=lo.jpg height="60" width="60"> </h3>
+ 111 Street Calgary,AB <br>
+    <h4>Hours of Operation </h4>
+Monday to Friday 10:00am-6:00pm <br>
+Saturday  10:00am-5:00pm <br>
+Sunday’s & Holidays CLOSED
+</div>
+<hr>
+<div class="foot">
+<span> 
+COPYRIGHT &copy; 2019 TRAVEL EXPERTS ALL RIGHTS RESERVED </span>
+<span class="right">
+<a href="#"> PRIVACY & POLICY </a> | 
+<a href="#"> TERMS & CONDITIONS </a> </span>
+</div>    
+</div>
+</div>
+<?php
+$servername='localhost';
+$username='root';
+$password='';
+$database='travelexperts';
+$conn=mysqli_connect($servername,$username,$password,$database);
+ if($conn)
+; //echo "Connected successfully!";
+else
+echo "Connection failure!";  
+   if (isset($_POST['add']))
+    {
+$Pkg_name=$_POST['pkg_name'];
+$Pkg_st_date=$_POST['pkg_st_date'];
+$Pkg_end_date=$_POST['pkg_end_date'];
+$Pkg_desc=$_POST['pkg_desc'];
+$Pkg_b_price=$_POST['pkg_b_price'];
+$Pkg_a_comm=$_POST['pkg_a_comm'];
+$Image=$_POST['pic'];
+
+//Insert data into packages table
+$sql="INSERT INTO packages (PkgName,PkgStartDate,PkgEndDate,PkgDesc,PkgBasePrice,PkgAgencyCommission,Image) VALUES ('$Pkg_name','$Pkg_st_date','$Pkg_end_date','$Pkg_desc','$Pkg_b_price','$Pkg_a_comm','$Image')";
+//send the query to Mysql database
+
+if (mysqli_query($conn,$sql))
+{
+    //echo "Package created.";
+   echo "<script> alert('Package added successfully.'); </script>";
+ 
+    //header("Location:main2.php");//sending the session variable to be displayed in main2.php
+}
+else{
+    echo "Package not added.Please try again.";
+}
+   }
+  //  }  
+//header ("Location:add.php");
+//header("Location:head-foot.php");
+mysqli_close($conn);
+    
+?>
+    
+</body>
+</html>
+<!-- Done by Simran-->
