@@ -1,0 +1,311 @@
+
+<html>
+<head>
+<title> Travel Experts </title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style>
+.bg
+{
+background-color:#00ADEF;
+}
+.headnav
+{
+height:110px;
+}
+.position
+{
+margin-left: 500px;
+}
+.input
+{
+width:400px;
+}
+    .right
+    {
+     text-align: right;
+     float:right;
+    }
+    .foot {
+color:royalblue;
+font-style: arial;
+}
+.row:after {
+content:"";
+display:table;
+clear:both;
+}
+.column
+{
+float:left;
+background-color:#00ADEF;
+width:33.33%;
+height:320px;
+} 
+
+.footer
+{
+position: fixed;
+left: 0;
+width: 100%; 
+text-align: center;
+}
+</style>
+ 
+</head>
+<body>
+  <?php
+$servername='localhost';
+$username='root';
+$password='';
+$database='travelexperts';
+$conn=mysqli_connect($servername,$username,$password,$database);
+if($conn)
+;//"Connected successfully!";
+else
+echo "Connection failure!";
+?>
+    
+<!-- header of the page -->
+    
+<nav class="navbar navbar-default bg ">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav navbar-right container">
+        <span> Welcome! </span> <br> 
+      
+        <!-- modal sign in -->
+        
+	  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Log Out here!</h4>
+        </div>
+        <div class="modal-body">
+		<span> Do you want to log out? </span>
+          </div>
+          
+        <div class="modal-footer">
+            <a href="head-foot.php" > <button type="button" class="btn btn-success btn-md">Sign Out</button> </a><br> <br>
+            
+        </div>
+      </div>
+    </div>
+	
+        </div> 
+        
+        <li> 
+            <div class="btn-group dropright">
+            <button class="btn btn-info btn " class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Manage Packages
+            </button>
+      <div class="dropdown-menu">
+    <a class="dropdown-item" href="add.php">Add Package</a> <br>
+    <a class="dropdown-item" href="update.php">Update Package</a> <br>
+    <a class="dropdown-item" href="delete.php">Delete Package</a>
+      </div></div>
+      </li>  
+        <li> <a href="#"><span class="glyphicon glyphicon-log-in btn-info btn" data-toggle="modal" data-target="#myModal1">Log Out </span></a></li>
+    </ul>
+  </div>
+</nav>
+
+    <!-- second nav bar -->
+    
+<nav class="navbar navbar-default">
+  <div class="container-fluid position">
+  <div class="navbar-header">
+      <img class="navbar-brand headnav" src="pic.jpg" height="110" width="220">
+    </div>
+    <ul class="nav navbar-nav navbar-center ">
+      <li><a href="agentmain.php"> Home </a></li>
+      <li><a href="display.php"> Packages </a></li>
+	  <li><a href="#"> Rewards </a></li>
+	  <!--<li><a href="aboutus.php"> About Us </a></li>-->
+	  <li><a href="contactus.php"> Contact Us </a></li>
+    </ul>
+  </div>
+</nav>
+
+	<!---midsection---->
+        <div class="sectional">
+            <div CLASS="midtext"><center><H1>THE TRAVEL EXPERTS</H1><BR><BR>
+                Crewed private yacht charters & group travel vacations for friends, families, and journeyers.
+                <BR>
+                    We are sailing travel specialists with curated itineraries worldwide. Our journeys are crewed by a team of dynamic world travelers accommodating and providing the comfort for epic adventures. Living on modern sailboats with up to 8 travelers aboard, we spend our days sailing from island to islands experiencing a way of life few have the pleasures of enjoying. To book a private cabin aboard a group organized boat or to charter a private boat with a group of your friends and loved ones, contact us to get started.
+
+
+
+                    Sailing Collective is a proud member of 1% For The Planet, pledging 1% of our annual sales to support nonprofit organizations focused on the environment.</center></div>
+
+
+
+                </div>
+                <!--CAROUSEL--->
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- blank -->
+                    <div class="blank">ffff</div>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <!-----SLIDE1--->
+                        <div class="item active row row-no-gutters no-pad">
+                            <div class="col-md-12 col-sm-12 col-lg-3 item">
+                                <div class="row row-no-gutters no-pad"><h1>Amsterdam highlights: 2019</h1><br><div class="desc">Learn more about Amsterdam and its lovely canal-side city, including the rich history and development of its tolerant society.</div></div>
+                                <div class="bookbut">
+                                    <button class="button1">Book</button>
+                                    <span id="dol">$1488</span>
+                                </div>
+                                <div class="row row-no-gutters no-pad"><img src="am2.jpg" class="img2" alt="Amsterdam">
+
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-3 item" >
+
+                                <div class="row row-no-gutters no-pad"><img src="am1.jpg" class="img2" alt="Amsterdam"></div>
+                                <div class="row row-no-gutters no-pad"><h1>Amsterdam highlights: 2020</h1><br><div class="desc">Learn more about this lovely canal-side city, including the rich history and development of its tolerant society.</div></div>
+                                <div class="bookbut">
+                                    <button class="button">Book</button>
+                                    <span id="dol">$1788</span>
+                                </div></div>
+                            <div class="col-sm-12 col-lg-6  item" ><img src="pic1.jpg" class="img1" alt="Amsterdam">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <h3>Ultimate European plus Greek Islands: March 2019</h3><h5> <i class="fa fa-map-marker" aria-hidden="true"></i></h5><p>Two week holidays are for the time poor, and that ain't you. 45 days will jive you through an entire Europe guidebook. From Serbia to Switzerland, Istanbul to Amsterdam, you're about to cover some serious ground. With included ferries and enough activities to take your breath away, this is nothing short of a trip of a lifetime. And it's all topped off with a Greek Island gallivant.<div class="bookbut">
+                                        <button class="button2">Book</button>
+                                        <span id="dol2">$1788</span></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!---SLIDE2--->
+                    <div class="item row row-no-gutters">
+                        <div class="col-md-12 col-sm-12 col-lg-3 item">
+                            <div class="row row-no-gutters"><h1>Istanbul:2020 Highlights</h1><br><div class="desc"> Learn more about this lovely canal-side city, including the rich history and development of its tolerant society.</div></div>
+                            <div class="bookbut">
+                                <button class="button1">Book</button>
+                                <span id="dol">$1488</span>
+                            </div>
+                            <div class="row row-no-gutters"><img src="pic3.jpg" class="img2" alt="Istanbul"></div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-lg-3 item" >
+
+                            <div class="row row-no-gutters"><img src="pic3.jpg" class="img2" alt="Istanbul"></div>
+                            <div class="row row-no-gutters"><h1>Istanbul highlights: 2020</h1><br><div class="desc">Lauded in antiquity as "the second Rome", this is a city where you most certainly should roam — culture and excitement lie around every corner.</div></div>
+                            <div class="bookbut">
+                                <button class="button1">Book</button>
+                                <span id="dol">$1788</span>
+                            </div></div>
+                        <div class="col-md-12 col-sm-12 col-lg-6  item" ><img src="pic3.jpg" class="img1" alt="Istanbul">
+                            <div class="overlay">
+                                <div class="text">
+                                    <h3>Ultimate European plus Greek Islands: March 2019</h3><h5> <i class="fa fa-map-marker" aria-hidden="true"></i></h5><p>Two week holidays are for the time poor, and that ain't you. 45 days will jive you through an entire Europe guidebook. From Serbia to Switzerland, Istanbul to Amsterdam, you're about to cover some serious ground. With included ferries and enough activities to take your breath away, this is nothing short of a trip of a lifetime. And it's all topped off with a Greek Island gallivant.<div class="bookbut">
+                                    <button class="button2">Book</button>
+                                    <span id="dol2">$1788</span></p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!---SLIDE3--->
+
+                <div class="item row row-no-gutters">
+                    <div class="col-md-12 col-sm-12 col-lg-3 item">
+                        <div class="row row-no-gutters"><h1>Amsterdam highlights: 2019</h1><br><div class="desc"> Learn more about this lovely canal-side city, including the rich history and development of its tolerant society.</div></div>
+                        <div class="bookbut">
+                            <button class="button1">Book</button>
+                            <span id="dol">$1488</span>
+                        </div>
+                        <div class="row row-no-gutters"><img src="pic2.jpg" class="img2" alt="Banff"></div>
+                    </div>
+                    <div class="col-md-12col-sm-12 col-lg-3 item" >
+
+                        <div class="row row-no-gutters"><img src="pic2.jpg" class="img2" alt="Banff"></div>
+                        <div class="row row-no-gutters"><h1>Amsterdam highlights: 2020</h1><br><div class="desc">Learn more about this lovely canal-side city, including the rich history and development of its tolerant society.</div></div>
+                        <div class="bookbut">
+                            <button class="button1">Book</button>
+                            <span id="dol">$1788</span>
+                        </div></div>
+                    <div class="col-sm-12 col-lg-6  item" ><img src="pic2.jpg" class="img1" alt="Banff">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Ultimate European plus Greek Islands: March 2019</h3><h5> <i class="fa fa-map-marker" aria-hidden="true"></i></h5><p>Two week holidays are for the time poor, and that ain't you. 45 days will jive you through an entire Europe guidebook. From Serbia to Switzerland, Istanbul to Amsterdam, you're about to cover some serious ground. With included ferries and enough activities to take your breath away, this is nothing short of a trip of a lifetime. And it's all topped off with a Greek Island gallivant.<div class="bookbut">
+                                <button class="button2">Book</button>
+                                <span id="dol2">$1788</span></p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+		
+    <!-- Footer of the page -->
+    
+<div class="jumbotron text-center footer" style="margin-bottom:0">
+  
+<div class="row">
+<div class="column">
+<h3 class="foot"> <img src="pic.jpg" height="120" width="200"> </h3>
+    <small> Real People. Real Deals. Why Book Anywhere Else?</small> <br><br>
+    <a href="https://www.facebook.com/"><img src="fb.jpg" height="50" width="50"></a>
+    <a href="https://www.twitter.com/"><img src="tw.jpg" height="50" width="50"></a>
+    <a href="https://www.instagram.com/"><img src="in.jpg" height="50" width="50"></a>
+</div>
+<div class="column">
+<h3 class="foot"> <img src="email.jpg" height="60" width="60"> </h3> 
+    <h4> Contact us via Email:</h4>
+    book@travelexperts.ca
+<h3 class="foot"> <img src="call.jpg" height="60" width="60"> </h3> 
+    <h4> Reach us via Phone:</h4>
+    Toll Free: 888-444-1111 <br>
+    111-111-111
+</div>
+    
+<div class="column">
+<h3 class="foot"> <img src=lo.jpg height="60" width="60"> </h3>
+ 111 Street Calgary,AB <br>
+    <h4>Hours of Operation </h4>
+Monday to Friday 10:00am-6:00pm <br>
+Saturday  10:00am-5:00pm <br>
+Sunday’s & Holidays CLOSED
+</div>
+<hr>
+<div class="foot">
+<span> 
+COPYRIGHT &copy; 2019 TRAVEL EXPERTS ALL RIGHTS RESERVED </span>
+<span class="right">
+<a href="#"> PRIVACY & POLICY </a> | 
+<a href="#"> TERMS & CONDITIONS </a> </span>
+</div>    
+</div>
+</div>
+   <?php 
+mysqli_close($conn);
+    ?>
+    
+</body>
+</html>
