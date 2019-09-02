@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Travel Experts </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="mainbk.css">
+        <link rel="stylesheet" type="text/css" href="slider.css">
+        
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="mainpg.js"></script>
+		<!--<script type="text/javascript" src="header.js"></script>-->
+    </head>
+    <body>
+	
+        
+        <!-- header of the page -->
+
+        <nav class="navbar navbar-default bg ">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-right container">
+                    <li> <span id="welcome"> </span></li>
+                    <li> <a href="#"><span id="account" class="glyphicon glyphicon-user btn btn-info btn" data-toggle="modal" data-target="#myModal">Sign Up </span></a></li>
+
+                    <!-- modal sign up -->
+
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header bg">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Sign up here!</h4>
+                                </div>
+                                <form class="form-horizontal" method="post" action="http://localhost/insert.php" onsubmit="return validateform()" id="signupform">
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="fname">First Name:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control input" name="f_name" placeholder="Enter First Name" id="fname">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="lname">Last Name:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control input" name="l_name"  placeholder="Enter Last Name" id="text2">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="email">Email:</label>
+                                            <div class="col-sm-10">
+                                                <input type="email" class="form-control input" name="email" placeholder="Enter email" id="text3">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="pwd">Password:</label>
+                                            <div class="col-sm-10"> 
+                                                <input type="password" class="form-control input" name="pwd" placeholder="At least 6 characters" id="text4">
+                                            </div>
+                                        </div>
+
+                                        <div class="checkbox">
+                                            <label><input type="checkbox"> Join <a href="#">Expedia Rewards </a>.By joining I accept all <a href="#">terms and conditions.</a> </label>
+                                        </div>
+
+                                        <div class="checkbox">
+                                            <label><input type="checkbox"> Send me emails with travel deals, special offers, and other information.  </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <p> <small>By creating an account, I agree to the <a href="#">Terms of Use</a> and the <a href="#">Privacy Policy</a>. </small></p>
+
+                                        <button type="submit" value="Sign Up" class="btn btn-primary btn-md" name="reg_user" onclick="signuppassdata()">Sign Up </button> <br> <br>
+
+                                        <div class="modal fade" id="myModal2" role="dialog">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header bg">
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        <h4 class="modal-title">Congratulations!</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p> You have successfully created an account with us.</p>
+                                                        <a> <button type="button" class="btn btn-success btn-sm"data-dismiss="modal" onclick="welcome()"  >Continue</button></a>
+                                                    </div></div></div></div> 
+
+                                        <small> Already have an account?</small> &nbsp; &nbsp;
+                                        <button type="button" class="btn btn-success btn-sm"data-dismiss="modal"data-toggle="modal" data-target="#myModal1" >Sign In</button>
+                                    </div>   
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- modal sign in -->
+
+                    <li> <a href="#"><span id="signout" class="glyphicon glyphicon-log-in btn-info btn" data-toggle="modal" data-target="#myModal1">Sign In </span></a></li>
+                    <div class="modal fade" id="myModal1" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header bg">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Sign In here!</h4>
+                                </div>
+                                <form class="form-horizontal" method="get" action="./main2.html" onsubmit="return signinvalidateform()" id="signinform" ><!--action="http://localhost/insert2.php"-->
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="username">Username:</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" name="username" class="form-control input" placeholder="Enter name" id="signinusername"></input>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-sm-2" for="pwd">Password:</label>
+                                            <div class="col-sm-10"> 
+                                                <input type="password" class="form-control input" name="loginpass" placeholder="Enter password" id="signuserpwd"></input>
+                                            </div>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox"> Keep me signed in.</label>
+                                        </div>
+
+                                        <span class="right"> <small> <u> <a href="#">Forgot password?</a></u></small></span>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox"> Join <a href="#">Expedia Rewards </a>.By joining I accept all <a href="#">terms and conditions.</a> </label>
+                                        </div>   
+
+                                        <div class="checkbox">
+                                            <label><input type="checkbox"> Send me emails with travel deals, special offers, and other information.  </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <!--<a href="main2.html">Sign In</a>-->
+                                        <button type="submit" class="btn btn-success btn-md" name="login_user" onclick="signinpassdata()"><!--data-dismiss="modal" -->
+                                            Sign In
+                                            </button> <br> <br>
+                                        <small> Need an account?</small> &nbsp; &nbsp;
+                                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal"data-toggle="modal" data-target="#myModal" onclick="signuppassdata()">Sign Up</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div> 
+<li><a href="#"> <span class="btn btn-info btn " data-toggle="modal" data-target="#myModal4"> Manage Packages </span></a></li>
+                    <div class="modal fade" id="myModal4" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-body">Log In Required!</h4>
+        </div>
+        </div></div></div>
+                </ul>
+            </div>
+        </nav>
+ <li> <a href="#"><span class="glyphicon glyphicon-log-in btn-info btn" data-toggle="modal" data-target="#myModal3">Agent Login </span></a></li>
+	  <div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bg">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Log In here!</h4>
+        </div>
+		<form class="form-horizontal" action="http://localhost/travelexperts/agentmain.php"><!--action="http://localhost/action.php"-->
+  
+        <div class="modal-body">
+		
+		
+		  <div class="form-group">
+			<label class="control-label col-sm-2" for="email">Username:</label>
+			<div class="col-sm-10">
+			  <input type="text" class="form-control input" id="text_1" placeholder="Enter name">
+			</div>
+		  </div>
+		  
+		  <div class="form-group">
+			<label class="control-label col-sm-2" for="pwd">Password:</label>
+			<div class="col-sm-10"> 
+			  <input type="password" class="form-control input" id="text_2" placeholder="Enter password">
+			</div>
+		  </div>
+
+		<div class="checkbox">
+			<label><input type="checkbox"> Keep me signed in.</label>
+		  </div>
+            
+            <span class="right"> <small> <u> <a href="#">Forgot password?</a></u></small></span>
+
+  </div>
+          
+        <div class="modal-footer">
+         <a href="agentmain.html"><button type="submit" class="btn btn-success btn-md" data-dismiss="modal" >Log In</a></button>  <br> <br><!--onclick="signin()"-->
+        
+        </div>
+          </form>
+      </div>
+    </div>
+	
+        </div> 
+                    
+
+        
+        <!-- second nav bar -->
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid position">
+                <div class="navbar-header">
+                    <img class="navbar-brand headnav" src="pic.jpg" height="110" width="220">
+                </div>
+                <ul class="nav navbar-nav navbar-center ">
+                    <li><a href="mainpage.html"> Home </a></li>
+                    <li><a href="Packagesdisp.html"> Packages </a></li>
+                    <li><a href="#"> Rewards </a></li>
+                    <!--<li><a href="aboutus.html"> About Us </a></li>-->
+                    <li><a href="contactus.html"> Contact Us </a></li>
+                </ul>
+            </div>
+        </nav>
+	
+		<div align="center">
+			
+			<div class="searchtab" >
+				
+                <label class="tabcontainer" >
+					<div align="left">
+					<div class="tabrow">
+						
+						<button class="tablinks" onclick="openpackage(event, 'Flights')" id="Flightsbtn"><img src="flightsicon.jfif" alt="Flights" width="50" height="50">
+						<br>Flights</button>
+						
+						<button class="tablinks" onclick="openpackage(event, 'Hotels')"><img src="hotelicon.jfif" alt="Hotels" width="50" height="50">
+						<br>Hotels</button>
+						
+						<button class="tablinks" onclick="openpackage(event, 'Flightandhotels')" ><img src="flightandhotel.png" alt="FlightsandHotel" width="100" height="50">
+						<br>Flight+Hotel</button>
+						
+
+					</div>
+						<!--Flights tab-->
+                        <div id="Flights" class="tabcontent">
+                            
+                            <label class="tripstab">
+                                <div class="btncontain">
+                                <button id="Rroundtrip" class="triplinks" onclick="opentrips(event,'Roundtrip')">Roundtrip</button>
+                                <button id="oneway" class="triplinks" onclick="opentrips(event,'Oneway')">One Way</button>
+                                </div>
+								<!--round trip tab in flights-->
+                                <div id="Roundtrip" class="tripcontent">
+                                    <!--form get information to submit to server-->
+                                    <form align="left" action="http://localhost/packages.php" method="post" onsubmit="return rttripvalidate()" id="flightrt">
+                                            <label class="departin">
+                                                <div style="text-align:left">
+                                                    <span style="font-size:10px;">Flying from</span>
+                                                </div>
+                                                <span class="location" ><img src="location.jfif" width="20" height="20"> </span>
+												<!--populate server destination data from booking detail table-->
+												<label for="departrt"></label>
+                                                <input type='search' list='dtlist' onclick="loadtrips()"   id="departrtcty" name="departrtcty" autocomplete="on" requierd></input>
+
+                                                <span id="departrt">
+                                                </span>
+                                            </label>
+											<!--arrival city-->
+                                            <label class="Arrivin">
+                                                <div style="text-align:left">
+                                                    <span style="font-size:10px;">Flying to</span>
+                                                </div>
+                                                <span class="location" ><img src="location.jfif" width="20" height="20"> </span>
+												
+                                                <label for="arrivert"></label>
+                                                <input type='search' list='dtlist' onclick="loadarrivetrips()" id="destrtcty" name="destrtcty" autocomplete="on"/>
+
+                                                <span id="arrivert">
+                                                </span>
+                                            </label>
+                                            <br>
+											<!--departure date-->
+                                            <label class="deptdtrt" onclick="getDate()">
+                                                <div style="text-align:left">
+                                                    <span style="font-size:10px;">Departing</span>
+                                                </div>
+                                                <input type="date" name="deptdtrt" size="20" id="deptdtrt" maxlength="30" ></input>
+                                            </label>
+											<!--arrival date-->
+                                            <label class="arrivdtrt" onclick="getDate()">
+                                                <div style="text-align:left">
+                                                    <span style="font-size:10px;">Returning</span>
+                                                </div>
+                                                <input type="date" name="arrivdtrt" size="20" id="arrivdtrt" maxlength="30" ></input>
+                                            </label>
+											<!--travelers info-->
+                                            <label class="Travelersrt" onclick="gettravelers()">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="height: 40px;background-color: white; color:black"><i class="fa fa-user"></i></button>
+                                                    
+                                                    <div style="text-align:left">
+                                                        <span style="font-size:10px;">Travellers</span>
+                                                        
+                                                        <div class="dropdowncty">
+                                                            <button class="dropbtn" id="travqty" style="width:300px;"> 
+                                                            </button>
+                                                            <div class="list-content">
+                                                              <a href="#">
+                                                                        Adult<br>
+                                                                        <div class="flex" >
+                                                                            
+                                                                                <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" id="adultminus" style="width: 25;height: 20;background-color:red;color:white;">
+                                                                                      -
+                                                                                </button>
+                                                                            
+                                                                                <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="6" >
+                                                                                
+                                                                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" id="adultplus" style="width: 25;height: 20;background-color:green;color:white;">
+                                                                                        +
+                                                                                    </button>
+                                                                    </div>
+                                                              </a>
+                                                                
+                                                              <a href="#">
+                                                                  
+                                                        Children(Ages 2-17)
+                                                                <div class="flex" >
+                                                                            
+                                                                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" id="childminus"style="width: 25;height: 20;background-color:red;color:white;">
+                                                                                      -
+                                                                                    </button>
+                                                                                
+                                                                                <input type="text" id="quantitycld" name="quantitycld" class="form-control input-number" value="0" min="0" max="6" >
+                                                                                
+                                                                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" id="childplus"style="width: 25;height: 20;background-color:green;color:white;">
+                                                                                        +
+                                                                                    </button>
+                                                                                
+                                                                            </div>
+                                                                    
+                                                                </a>
+                                                               
+                                                              <a href="#">
+                                                                  
+                                                        Infants(Ages under2)
+                                                                <div class="flex" >
+                                                                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" id="Infminus" style="width: 25;height: 20;background-color:red;color:white;">
+                                                                                      -
+                                                                                    </button>
+                                                                                
+                                                                                <input type="text" id="quantityInf" name="quantityInf" class="form-control input-number" value="0" min="0" max="6" >
+                                                                                
+                                                                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" id="Infplus" style="width: 25;height: 20;background-color:green;color:white;">
+                                                                                        +
+                                                                                    </button>
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                        </div>  
+                                                    </div>
+                                                </div>
+
+                                            </label>
+                                
+                                            <br>
+											<!--advanced collapse menu-->
+											<div class="container" style=" position:absolute; width:100%; height:50%;">
+												<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#advancedop" height="20px">Advanced</button><br>
+												<div id="advancedop" class="collapse" style=" position:absolute;top:50px; width:100%; height:100%;">
+													Preferred airline<br>
+                                                <label for="preferairline"></label>
+                                                
+                                                <input type='search' list='airlinelist' onclick="loadairline()" autocomplete="on"/>
+
+                                                <span id="preferairline">
+                                                </span>
+                                                <br>
+													Prefered class<br>
+                                                    <label for="prefclassrt"></label>
+                                                    <input type='search' list='prefclasslist' onclick="loadclass()" autocomplete="on"/>
+
+													<span id="prefclassrt">
+													</span>
+												</div>
+											</div>
+											<button type="submit" class="btn-primary btn-action gcw-submit" data-gcw-change-submit-text="Search" style="background-color:yellow; color:black;position:absolute;bottom:10px;" onclick="loadnewpg()">Search</button><!---->
+                                    </form>    
+                                </div>
+								<!--one way trip tab-->
+                                <div id="Oneway" class="tripcontent">
+                                    <form align="left" action="http://localhost/packages.php" method="post" onsubmit="return onewtripvalidate()">
+                                            <!--depart city-->
+											<label class="departin">
+                                                <div style="text-align:left">
+                                                    <span style="font-size:10px;">Flying from</span>
+                                                </div>
+                                                <span class="location" ><img src="location.jfif" width="20" height="20"> </span>
+                                                <label for="departow"></label>
+                                                <input type='search' list='dtlist' onclick="loadtrips()" id="departowcty" name="departowcty" autocomplete="on"/>
+                                                <span id="departow">
+                                                </span>
+                                            </label>
+											<!--arrival city-->
+                                            <label class="Arrivin">
+                                                <div style="text-align:left">
+                                                    <span style="font-size:10px;">Flying to</span>
+                                                </div>
+                                                <span class="location" ><img src="location.jfif" width="20" height="20"> </span>
+												
+                                                <label for="arriveow"></label>
+                                                <input type='search' list='dtlist' onclick="loadarrivetrips()" id="destowcty" name="destrtcty" autocomplete="on"/>
+
+                                                <span id="arriveow">
+                                                </span>
+                                            </label>
+                                            <br>
+                                            <!--depart date-->
+                                            <label class="deptdtrt" onclick="getDate()">
+                                                <div style="text-align:left">
+                                                    <span style="font-size:10px;">Departing</span>
+                                                </div>
+                                                <input type="date" name="deptdtow" size="20" id="deptdtow" maxlength="30" ></input>
+                                            </label>
+											<!--traveler info-->
+                                            <label class="Travelersrt" onclick="gettravelers()">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="height: 40px;background-color: white; color:black"><i class="fa fa-user"></i></button>
+                                                    
+                                                    <div style="text-align:left">
+                                                        <span style="font-size:10px;">Travellers</span>
+                                                        
+                                                        <div class="dropdowncty">
+                                                            <button class="dropbtn" id="travqtyow" style="width:300px;"> 
+
+                                                            </button>
+
+                                                            <div class="list-content">
+                                                              <a href="#">
+                                                                  
+                                                                        Adult<br>
+                                                                        <div class="flex" >
+                                                                            
+                                                                                <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" id="adultminusow" style="width: 25;height: 20;background-color:red;color:white;">
+                                                                                      -
+                                                                                </button>
+                                                                            
+                                                                                <input type="text" id="quantityow" name="quantityow" class="form-control input-number" value="1" min="1" max="6" >
+                                                                                
+                                                                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" id="adultplusow" style="width: 25;height: 20;background-color:green;color:white;">
+                                                                                        +
+                                                                                    </button>
+                                                                                
+                                                                    </div>
+                                                              </a>
+                                                                
+                                                              <a href="#">
+                                                                  
+                                                        Children(Ages 2-17)
+                                                                <div class="flex" >
+                                                                            
+                                                                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" id="childminusow"style="width: 25;height: 20;background-color:red;color:white;">
+                                                                                      -
+                                                                                    </button>
+                                                                                
+                                                                                <input type="text" id="quantitycldow" name="quantitycldow" class="form-control input-number" value="0" min="0" max="6" >
+                                                                                
+                                                                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" id="childplusow"style="width: 25;height: 20;background-color:green;color:white;">
+                                                                                        +
+                                                                                    </button>
+                                                                                
+                                                                            </div>
+                                                                    
+                                                                </a>
+                                                               
+                                                              <a href="#">
+                                                                  
+                                                        Infants(Ages under2)
+                                                                <div class="flex" >
+                                                                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" id="Infminusow" style="width: 25;height: 20;background-color:red;color:white;">
+                                                                                      -
+                                                                                    </button>
+                                                                                
+                                                                                <input type="text" id="quantityInfow" name="quantityInfow" class="form-control input-number" value="0" min="0" max="6" >
+                                                                                
+                                                                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" id="Infplusow" style="width: 25;height: 20;background-color:green;color:white;">
+                                                                                        +
+                                                                                    </button>
+                                                                         
+                                                                    </div>
+
+                                                                </a>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <br>
+											<!--advanced selection-->
+											<div class="container" style=" position:absolute; width:100%; height:50%;">
+												<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#advancedopow" height="20px">Advanced</button><br>
+												<div id="advancedopow" class="collapse" style=" position:absolute;top:50px; width:100%; height:100%;">
+													Preferred airline<br>
+                                                    <label for="preferairlineow"></label>
+                                                
+                                                <input type='search' list='airlinelist' onclick="loadairline()" autocomplete="on"/>
+
+                                                <span id="preferairlineow">
+                                                </span>
+                                                <br>
+												Prefered class<br>
+                                                <label for="prefclassow"></label>
+                                                <input type='search' list='prefclasslist' onclick="loadclass()" autocomplete="on"/>
+
+                                                <span id="prefclassow">
+                                                </span>
+												</div>
+											</div>
+											<!--submit the information to server and go to the booking page-->
+											<button type="submit" class="btn-primary btn-action gcw-submit" data-gcw-change-submit-text="Search" style="background-color:yellow; color:black;position:absolute;bottom:10px;" onclick="loadnewpg()">Search</button>
+                                    </form>    
+                                </div>
+
+                            </label>
+                        </div>
+						<!--hotels tab-->
+                        <div id="Hotels" class="tabcontent">
+                            <form align="left" action="http://localhost/packages.php" method="post" onsubmit="return hotelvalidate()">
+											<!--depart city-->
+                                            <label class="departin">
+                                                <div style="text-align:left">
+                                                    <span style="font-size:10px;">Going to</span>
+                                                </div>
+                                                <span class="location" ><img src="location.jfif" width="20" height="20"> </span>
+                                                <label for="hoteltolst"></label>
+                                                <input type='search' list='dtlist' onclick="loadtrips()" id="hotelto" name="hotelto" autocomplete="on"/>
+                                                <span id="hoteltolst">
+                                                </span>
+                                            </label>
+                                            <br>
+											<!--check in date-->
+                                            <label class="deptdtrt" onclick="getDate()">
+                                                <div style="text-align:left">
+                                                    <span style="font-size:10px;">Check-In</span>
+                                                </div>
+                                                <input type="date" name="deptdthtl" size="20" id="checkindt" maxlength="30" ></input>
+                                            </label>
+											<!--check out date-->
+                                            <label class="deptdtrt" onclick="getDate()">
+                                                <div style="text-align:left">
+                                                    <span style="font-size:10px;">Check-Out</span>
+                                                </div>
+                                                <input type="date" name="destrtcty" size="20" id="checkoutdt" maxlength="30" ></input>
+                                            </label>
+											<!--travelers info-->
+                                            <label class="Travelersrt" onclick="gettravelers()">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="height: 40px;background-color: white; color:black"><i class="fa fa-user"></i></button>
+                                                    
+                                                    <div style="text-align:left">
+                                                        <span style="font-size:10px;">Travellers</span>
+                                                        
+                                                        <div class="dropdowncty">
+                                                            <button class="dropbtn" id="travqtyhotel" style="width:300px;"> 
+
+                                                            </button>
+
+                                                            <div class="list-content">
+                                                              <a href="#">
+                                                                  
+                                                                        Adult<br>
+                                                                        <div class="flex" >
+                                                                            
+                                                                                <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" id="adultminushtl" style="width: 25;height: 20;background-color:red;color:white;">
+                                                                                      -
+                                                                                </button>
+                                                                            
+                                                                                <input type="text" id="quantityhtl" name="quantityhtl" class="form-control input-number" value="1" min="1" max="6" >
+                                                                                
+                                                                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" id="adultplushtl" style="width: 25;height: 20;background-color:green;color:white;">
+                                                                                        +
+                                                                                    </button>
+                                                                                
+                                                                    </div>
+                                                              </a>
+                                                                
+                                                              <a href="#">
+                                                                  
+                                                        Children(Ages 2-17)
+                                                                <div class="flex" >
+                                                                            
+                                                                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" id="childminushtl"style="width: 25;height: 20;background-color:red;color:white;">
+                                                                                      -
+                                                                                    </button>
+                                                                                
+                                                                                <input type="text" id="quantitycldhtl" name="quantitycldhtl" class="form-control input-number" value="0" min="0" max="6" >
+                                                                                
+                                                                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" id="childplushtl"style="width: 25;height: 20;background-color:green;color:white;">
+                                                                                        +
+                                                                                    </button>
+                                                                                
+                                                                            </div>
+                                                                    
+                                                                </a>
+                                                               
+                                                              <a href="#">
+                                                                  
+                                                        Infants(Ages under2)
+                                                                <div class="flex" >
+                                                                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" id="Infminushtl" style="width: 25;height: 20;background-color:red;color:white;">
+                                                                                      -
+                                                                                    </button>
+                                                                                
+                                                                                <input type="text" id="quantityInfhtl" name="quantityInfhtl" class="form-control input-number" value="0" min="0" max="6" >
+                                                                                
+                                                                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" id="Infplushtl" style="width: 25;height: 20;background-color:green;color:white;">
+                                                                                        +
+                                                                                    </button>
+                                                                         
+                                                                    </div>
+
+                                                                </a>
+                                                            </div>
+                                                        </div> 
+                                                        
+                                                    </div>
+                                                
+                                                </div>
+
+                                            </label>
+                                
+                                            <br>
+											
+											<button type="submit" class="btn-primary btn-action gcw-submit" data-gcw-change-submit-text="Search" style="background-color:yellow; color:black;position:absolute;bottom:10px;" onclick="loadnewpg()">Search</button>
+                                    </form>    
+                        </div>
+						<!--packages with flight and hotels information-->
+                        <div id="Flightandhotels" class="tabcontent">
+                            <form align="left" action="http://localhost/packages.php" method="post" onsubmit="return fahvalidate()">
+											<!--depart city-->
+                                            <label class="departin">
+                                                
+                                                <select size="1"  id="departctypkg" onclick="loadpkgcty()" style="width:330px;font-size: 25px;height: 50px;">
+                                                    <option value="" disabled selected>Leaving from</option>
+                                                    
+                                                </select>
+                                                
+                                            </label>
+											<!--arrival address-->
+                                            <label class="Arrivin">
+                                                <div style="text-align:left">
+                                                    <span style="font-size:10px;">Going to</span>
+                                                </div>
+                                                
+												
+                                                <label for="arrivepkg"></label>
+                                                <input type='search' list='dtlist' onclick="loadarrivetrips()" id="deptpkgcty" name="deptpkgcty" autocomplete="on"/>
+
+                                                <span id="arrivepkg">
+                                                </span>
+                                            </label>
+                                            <br>
+											<!--depart date-->
+                                            <label class="deptdtrt" onclick="getDate()">
+                                                <div style="text-align:left">
+                                                    <span style="font-size:10px;">Departing</span>
+                                                </div>
+                                                <input type="date" name="destrtcty" size="20" id="destdtpkg" maxlength="30" ></input>
+
+
+                                            </label>
+											<!--arrival date-->
+                                            <label class="arrivdtrt" onclick="getDate()">
+                                                <div style="text-align:left">
+                                                    <span style="font-size:10px;">Returning</span>
+                                                </div>
+                                                <input type="date" name="arrivdtpkg" size="20" id="arrivdtpkg" maxlength="30" ></input>
+
+
+                                            </label>
+											<!--travelers information-->
+                                            <label class="Travelersrt" onclick="gettravelers()">
+                                                <div class="dropdown">
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" style="height: 40px;background-color: white; color:black"><i class="fa fa-user"></i></button>
+                                                    
+                                                    <div style="text-align:left">
+                                                        <span style="font-size:10px;">Travellers</span>
+                                                        
+                                                        <div class="dropdowncty">
+                                                            <button class="dropbtn" id="travqtypkg" style="width:300px;"> 
+
+                                                            </button>
+
+                                                            <div class="list-content">
+                                                              <a href="#">
+                                                                  
+                                                                        Adult<br>
+                                                                        <div class="flex" >
+                                                                            
+                                                                                <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" id="adultminuspkg" style="width: 25;height: 20;background-color:red;color:white;">
+                                                                                      -
+                                                                                </button>
+                                                                            
+                                                                                <input type="text" id="quantitypkg" name="quantitypkg" class="form-control input-number" value="1" min="1" max="6" >
+                                                                                
+                                                                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" id="adultpluspkg" style="width: 25;height: 20;background-color:green;color:white;">
+                                                                                        +
+                                                                                    </button>
+                                                                                
+                                                                    </div>
+                                                              </a>
+                                                                
+                                                              <a href="#">
+                                                                  
+                                                        Children(Ages 2-17)
+                                                                <div class="flex" >
+                                                                            
+                                                                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" id="childminuspkg"style="width: 25;height: 20;background-color:red;color:white;">
+                                                                                      -
+                                                                                    </button>
+                                                                                
+                                                                                <input type="text" id="quantitycldpkg" name="quantitycldpkg" class="form-control input-number" value="0" min="0" max="6" >
+                                                                                
+                                                                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" id="childpluspkg"style="width: 25;height: 20;background-color:green;color:white;">
+                                                                                        +
+                                                                                    </button>
+                                                                                
+                                                                            </div>
+                                                                    
+                                                                </a>
+                                                               
+                                                              <a href="#">
+                                                                  
+                                                        Infants(Ages under2)
+                                                                <div class="flex" >
+                                                                                    <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="" id="Infminuspkg" style="width: 25;height: 20;background-color:red;color:white;">
+                                                                                      -
+                                                                                    </button>
+                                                                                
+                                                                                <input type="text" id="quantityInfpkg" name="quantityInfpkg" class="form-control input-number" value="0" min="0" max="6" >
+                                                                                
+                                                                                    <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="" id="Infpluspkg" style="width: 25;height: 20;background-color:green;color:white;">
+                                                                                        +
+                                                                                    </button>
+                                                                         
+                                                                    </div>
+
+                                                                </a>
+                                                            </div>
+                                                        </div> 
+                                                        
+                                                    </div>
+                                                
+                                                </div>
+
+                                            </label>
+                                
+                                            <br>
+											<!--advanced selection-->
+											<div class="container" style=" position:absolute; width:100%; height:50%;">
+												<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#advancedoppkg" height="20px">Advanced</button><br>
+												<div id="advancedoppkg" class="collapse" style=" position:absolute;top:50px; width:100%; height:100%;">
+													Preferred airline<br>
+                                                    <label for="preferairlinepkg"></label>
+                                                
+                                                <input type='search' list='airlinelist' onclick="loadairline()" autocomplete="on"/>
+
+                                                <span id="preferairlinepkg">
+                                                </span>
+                                                    <br>
+													Prefered class<br>
+                                                    <label for="prefclassrtpkg"></label>
+                                                    <input type='search' list='prefclasslist' onclick="loadclass()" autocomplete="on"/>
+
+                                                <span id="prefclassrtpkg">
+                                                </span>
+                                                   
+												</div>
+											</div>
+											<!--submit information to server and go to page booking-->
+											<button type="submit" class="btn-primary btn-action gcw-submit" data-gcw-change-submit-text="Search" style="background-color:yellow; color:black;position:absolute;bottom:10px;" onclick="loadnewpg()">Search</button>
+                                    </form> 
+                        </div>
+                    </div>
+                </label>
+				
+			</div>
+			
+		</div>
+		<div class="bkimage"></div>
+		<div class="bkimage" ></div>
+		
+    <script type="text/javascript" src="mainpg.js"></script>
+	
+	<!---midsection---->
+        <div class="sectional">
+            <div CLASS="midtext"><center><H1>THE TRAVEL EXPERTS</H1><BR><BR>
+                Crewed private yacht charters & group travel vacations for friends, families, and journeyers.
+                <BR>
+                    We are sailing travel specialists with curated itineraries worldwide. Our journeys are crewed by a team of dynamic world travelers accommodating and providing the comfort for epic adventures. Living on modern sailboats with up to 8 travelers aboard, we spend our days sailing from island to islands experiencing a way of life few have the pleasures of enjoying. To book a private cabin aboard a group organized boat or to charter a private boat with a group of your friends and loved ones, contact us to get started.
+
+
+
+                    Sailing Collective is a proud member of 1% For The Planet, pledging 1% of our annual sales to support nonprofit organizations focused on the environment.</center></div>
+
+
+
+                </div>
+                <!--CAROUSEL--->
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- blank -->
+                    <div class="blank">ffff</div>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <!-----SLIDE1--->
+                        <div class="item active row row-no-gutters no-pad">
+                            <div class="col-md-12 col-sm-12 col-lg-3 item">
+                                <div class="row row-no-gutters no-pad"><h1>Amsterdam highlights: 2019</h1><br><div class="desc">Learn more about Amsterdam and its lovely canal-side city, including the rich history and development of its tolerant society.</div></div>
+                                <div class="bookbut">
+                                    <button class="button1">Book</button>
+                                    <span id="dol">$1488</span>
+                                </div>
+                                <div class="row row-no-gutters no-pad"><img src="am2.jpg" class="img2" alt="Amsterdam">
+
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-lg-3 item" >
+
+                                <div class="row row-no-gutters no-pad"><img src="am1.jpg" class="img2" alt="Amsterdam"></div>
+                                <div class="row row-no-gutters no-pad"><h1>Amsterdam highlights: 2020</h1><br><div class="desc">Learn more about this lovely canal-side city, including the rich history and development of its tolerant society.</div></div>
+                                <div class="bookbut">
+                                    <button class="button">Book</button>
+                                    <span id="dol">$1788</span>
+                                </div></div>
+                            <div class="col-sm-12 col-lg-6  item" ><img src="pic1.jpg" class="img1" alt="Amsterdam">
+                                <div class="overlay">
+                                    <div class="text">
+                                        <h3>Ultimate European plus Greek Islands: March 2019</h3><h5> <i class="fa fa-map-marker" aria-hidden="true"></i></h5><p>Two week holidays are for the time poor, and that ain't you. 45 days will jive you through an entire Europe guidebook. From Serbia to Switzerland, Istanbul to Amsterdam, you're about to cover some serious ground. With included ferries and enough activities to take your breath away, this is nothing short of a trip of a lifetime. And it's all topped off with a Greek Island gallivant.<div class="bookbut">
+                                        <button class="button2">Book</button>
+                                        <span id="dol2">$1788</span></p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!---SLIDE2--->
+                    <div class="item row row-no-gutters">
+                        <div class="col-md-12 col-sm-12 col-lg-3 item">
+                            <div class="row row-no-gutters"><h1>Istanbul:2020 Highlights</h1><br><div class="desc"> Learn more about this lovely canal-side city, including the rich history and development of its tolerant society.</div></div>
+                            <div class="bookbut">
+                                <button class="button1">Book</button>
+                                <span id="dol">$1488</span>
+                            </div>
+                            <div class="row row-no-gutters"><img src="pic3.jpg" class="img2" alt="Istanbul"></div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-lg-3 item" >
+
+                            <div class="row row-no-gutters"><img src="pic3.jpg" class="img2" alt="Istanbul"></div>
+                            <div class="row row-no-gutters"><h1>Istanbul highlights: 2020</h1><br><div class="desc">Lauded in antiquity as "the second Rome", this is a city where you most certainly should roam  culture and excitement lie around every corner.</div></div>
+                            <div class="bookbut">
+                                <button class="button1">Book</button>
+                                <span id="dol">$1788</span>
+                            </div></div>
+                        <div class="col-md-12 col-sm-12 col-lg-6  item" ><img src="pic3.jpg" class="img1" alt="Istanbul">
+                            <div class="overlay">
+                                <div class="text">
+                                    <h3>Ultimate European plus Greek Islands: March 2019</h3><h5> <i class="fa fa-map-marker" aria-hidden="true"></i></h5><p>Two week holidays are for the time poor, and that ain't you. 45 days will jive you through an entire Europe guidebook. From Serbia to Switzerland, Istanbul to Amsterdam, you're about to cover some serious ground. With included ferries and enough activities to take your breath away, this is nothing short of a trip of a lifetime. And it's all topped off with a Greek Island gallivant.<div class="bookbut">
+                                    <button class="button2">Book</button>
+                                    <span id="dol2">$1788</span></p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!---SLIDE3--->
+
+                <div class="item row row-no-gutters">
+                    <div class="col-md-12 col-sm-12 col-lg-3 item">
+                        <div class="row row-no-gutters"><h1>Amsterdam highlights: 2019</h1><br><div class="desc"> Learn more about this lovely canal-side city, including the rich history and development of its tolerant society.</div></div>
+                        <div class="bookbut">
+                            <button class="button1">Book</button>
+                            <span id="dol">$1488</span>
+                        </div>
+                        <div class="row row-no-gutters"><img src="pic2.jpg" class="img2" alt="Banff"></div>
+                    </div>
+                    <div class="col-md-12col-sm-12 col-lg-3 item" >
+
+                        <div class="row row-no-gutters"><img src="pic2.jpg" class="img2" alt="Banff"></div>
+                        <div class="row row-no-gutters"><h1>Amsterdam highlights: 2020</h1><br><div class="desc">Learn more about this lovely canal-side city, including the rich history and development of its tolerant society.</div></div>
+                        <div class="bookbut">
+                            <button class="button1">Book</button>
+                            <span id="dol">$1788</span>
+                        </div></div>
+                    <div class="col-sm-12 col-lg-6  item" ><img src="pic2.jpg" class="img1" alt="Banff">
+                        <div class="overlay">
+                            <div class="text">
+                                <h3>Ultimate European plus Greek Islands: March 2019</h3><h5> <i class="fa fa-map-marker" aria-hidden="true"></i></h5><p>Two week holidays are for the time poor, and that ain't you. 45 days will jive you through an entire Europe guidebook. From Serbia to Switzerland, Istanbul to Amsterdam, you're about to cover some serious ground. With included ferries and enough activities to take your breath away, this is nothing short of a trip of a lifetime. And it's all topped off with a Greek Island gallivant.<div class="bookbut">
+                                <button class="button2">Book</button>
+                                <span id="dol2">$1788</span></p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+		
+		<!-- Footer of the page -->
+
+        <div  style="margin-bottom:0"><!--class="jumbotron text-center footer"-->
+
+            <div class="row">
+                <div class="column">
+                    <h3 class="foot"> <img src="pic.jpg" height="120" width="200"> </h3>
+                    <small> Real People. Real Deals. Why Book Anywhere Else?</small> <br><br>
+                    <a href="https://www.facebook.com/"><img src="fb.jpg" height="50" width="50"></a>
+                    <a href="https://www.twitter.com/"><img src="tw.jpg" height="50" width="50"></a>
+                    <a href="https://www.instagram.com/"><img src="in.jpg" height="50" width="50"></a>
+                </div>
+                <div class="column">
+                    <h3 class="foot"> <img src="email.jpg" height="60" width="60"> </h3> 
+                    <h4> Contact us via Email:</h4>
+                    book@travelexperts.ca
+                    <h3 class="foot"> <img src="call.jpg" height="60" width="60"> </h3> 
+                    <h4> Reach us via Phone:</h4>
+                    Toll Free: 888-444-1111 <br>
+                    111-111-111
+                </div>
+
+                <div class="column">
+                    <h3 class="foot"> <img src=lo.jpg height="60" width="60"> </h3>
+                    111 Street Calgary,AB <br>
+                    <h4>Hours of Operation </h4>
+                    Monday to Friday 10:00am-6:00pm <br>
+                    Saturday  10:00am-5:00pm <br>
+                    Sundays & Holidays CLOSED
+                </div>
+                <hr>
+                <div class="foot">
+                    <span> 
+                        COPYRIGHT &copy; 2019 TRAVEL EXPERTS ALL RIGHTS RESERVED </span>
+                    <span class="right">
+                        <a href="#"> PRIVACY & POLICY </a> | 
+                        <a href="#"> TERMS & CONDITIONS </a> </span>
+                </div>    
+            </div>
+        </div>
+        
+		
+    </body>
+</html>
