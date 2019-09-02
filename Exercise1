@@ -1,0 +1,81 @@
+<html>
+
+<head>
+
+<title> index </title>
+<link rel="stylesheet" type="text/css" href="indexcss.css"></link>
+
+
+</head>
+
+<body> <center>
+<header> 
+<h1> <img src='logo.png' height="150" width="250"> 
+
+ Welcome to Travel Experts </h1> 
+ <nav> 
+ <a href="index.html">Home</a>|
+ <a href="register.html">Register</a>|
+ <a href="aboutus.html">About us</a>|
+ <a href="contact.html">Contact us</a>
+ </nav> <br>
+ </header>
+ <img src="travel1.jpg" height="250" width="100%"><br><br>
+<section>
+<img src='pic7.jpg'height="220" width="350">  <img src='pic1.jpg'height="220" width="275">  
+<img src='pic9.jpg'height="220" width="300">
+<img src='pic2.jpg'height="220" width="275">  
+<img src='pic8.jpg'height="220" width="350"> <br><br> </center>
+
+The Travel Experts started as the most successful brick 
+and mortar agency in Canada. Through the insight of our management
+ team we followed industry trends and became an independent at home agency. 
+Proud to be a part of the Red Label Vacations family, we are committed to living
+ up to our name both in customer service and in the support and training we provide to our team.
+<br><br>
+<div class="row">
+<div class="column">
+<img src="airport-man.jpg" height="250" width="350"> 
+</div>
+<div class="column">
+<img src="knowledge.jpg" height="250" width="350"> 
+</div>
+<div class="column">
+<img src="bang.jpg" height="250" width="350"> 
+</div>
+</div>
+
+<div class="row">
+<div class="text">
+<h2> We've got your back</h2> 
+<p>Canceled flight? Didn't get the room you booked? No need to argue with the front desk. Your Travel Expert
+ knows who to call to get it fixed on the spot. </p>
+</div>
+<div class="text">
+<h2> Knowledge is power</h2> 
+<p>Agents are constantly learning via personal experience and industry education.
+ Our Travel Experts have inside information that makes your trip memorable. </p>
+</div>
+<div class="text">
+<h2> More bang for your buck </h2> 
+<p>We have access to deals and promotions from cruises to hotels
+ to tours that are exclusive to our travel experts. </p>
+</div>
+</div>
+
+<br> <br> <center>
+
+<a href= 'register.html'> <img src='pic5.jpg'height="100" width="100"> </a>
+
+<a href='contact.html'> <img src='pic4.jpg'height="100" width="100"> </a>
+</section>
+<br>
+<footer>
+Copyright &copy; 2019 Travel Experts, All rights reserved.
+</footer>
+</center>
+
+</body>
+
+</html>
+
