@@ -1,0 +1,125 @@
+<html>
+<head>
+<title> Refine search </title>
+<style>
+.absolute
+{
+position:absolute;
+width:200px;
+height:550px;
+border:3px solid #maroon;
+float:left;
+background-color:gray;
+}
+.title
+{
+font-style:arial;
+font-size=20px;
+}
+.slider1
+{
+opacity:0.7;
+}
+</style>
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function_slide() {
+  output.innerHTML = this.value;
+}
+</script>
+</head>
+<body> 
+<div class="absolute"> 
+<form>
+<h3 class="title"> Refine Search &nbsp <input type="reset" name="reset" value="Reset" </h3> <br>
+<hr>
+<h3 class="title"> CONDITION </h3> 
+<input type="checkbox" name="check1"> New </input> <br>
+<input type="checkbox" name="check2"> Pre-owned </input> <br>
+<hr>
+<h3 class="title"> YEAR 
+&nbsp
+<select>
+<option value="min">MIN</option>
+<option value="2008">2008</option>
+<option value="2009">2009</option>
+<option value="2010">2010</option>
+<option value="2011">2011</option>
+<option value="2012">2012</option>
+<option value="2013">2013</option>
+<option value="2014">2014</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+</select>
+&nbsp
+<select>
+<option value="max">MAX</option>
+<option value="2008">2008</option>
+<option value="2009">2009</option>
+<option value="2010">2010</option>
+<option value="2011">2011</option>
+<option value="2012">2012</option>
+<option value="2013">2013</option>
+<option value="2014">2014</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+</select> </h3>
+<hr>
+
+<h3 class="title"> MAKE 
+&nbsp
+<select>
+<option input type="checkbox" name="c0"> All </option>
+<option input type="checkbox" name="c1"> Argo </option>
+<option input type="checkbox" name="c2"> BMW </option>
+<option input type="checkbox" name="c3"> Triumph </option>
+<option input type="checkbox" name="c4"> Ducati </option>
+<option input type="checkbox" name="c5"> Stanley </option>
+<option input type="checkbox" name="c6"> Yamaha </option>
+<option input type="checkbox" name="c7"> Suzuki </option>
+<option input type="checkbox" name="c8"> Beta </option>
+<option input type="checkbox" name="c9"> Bulls eBikes </option>
+<option input type="checkbox" name="c10"> Honda </option>
+<option input type="checkbox" name="c11"> Stryker </option>
+<option input type="checkbox" name="c12"> Aprilia </option>
+</select> </h3>
+<hr>
+<h3 class="title"> PRICE </h3>
+<input type="range"min="0" max="100" step="10" list="steplist">
+<datalist id="steplist">
+  <option value="0" label="0">0</option>
+  <option value="10"> </option>
+  <option value="20"> </option>
+  <option value="30"> </option>
+  <option value="40"> </option>
+  <option value="50" label="50k">50</option>
+  <option value="60"> </option>
+  <option value="70"> </option>
+  <option value="80"> </option>
+  <option value="90"> </option>
+  <option value="100" label="100k">100</option>
+</datalist></input>
+<span id="demo"></span> 
+
+<input type="range" min="$0" max="$115k" class="slider1" id="myRange" onchange="function_slide()"></input>
+<span id="demo"></span> 
+<hr>
+<h3 class="title"> ODOMETER </h3>
+<input type="range" min="0 km" max="62k km"  class="slider1"></input> <hr>
+<center><input type="button" value="Apply"></input></center>
+
+</form>
+</div> 
+
+</body>
+</html>
