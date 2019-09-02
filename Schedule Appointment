@@ -1,0 +1,129 @@
+<html>
+<head>
+<title> Schedule Service </title>
+<style>
+.body{ width: 974px;
+ margin: 0 auto;
+font-style: arial;
+font-size: 18px;
+ }
+ .text{
+ height:35px;
+ width:300px;
+ }
+ #submit{
+ height:40px;
+ width:100px;
+ background-color:gray;
+ }
+</style>
+<script>
+function sform()
+{
+
+	if (document.getElementById("text1_id").value=="")
+	{
+	alert("Field required!");
+	return false;
+	}
+	else if (document.getElementById("text2_id").value=="")
+	{
+	alert("Field required!");
+	return false;
+	}
+	else if (document.getElementById("text3_id").value=="")
+	{
+	alert("Field required!");
+	return false;
+	}
+	else if (document.getElementById("text4_id").value=="")
+	{
+	alert("Field required!");
+	return false;
+	}
+	else if (document.getElementById("text5_id").value=="")
+	{
+	alert("Field required!");
+	return false;
+	}
+	else if (document.getElementById("text6_id").value=="")
+	{
+	alert("Field required!");
+	return false;
+	}
+	
+	else
+	{
+	s=confirm("Do you want to submit the form?");
+	if (s==true)
+	{
+	return true;
+	}
+	else 
+	{
+	return false;
+	}}
+}
+function freset()
+{
+r=confirm("Do you want to reset the form?");
+if (r==true)
+	{ 
+	document.getElementById("form_id").reset;
+	}
+else
+	{
+	return false;
+	}
+}
+</script>
+</head>
+<body class="body">
+<h1> <center>
+<img src="tool.jpg" height="30" width="30"> 
+Motorcycle Service with Motorpedia </center>
+</h1>
+<p align="justify">
+Motorpedia is your O.E.M. dealer for Motorcycles, Suzuki, Yamaha, Yamaha Power Equipment. We provide O.E.M 
+(original equipment manufacturer) service for the manufacturers we represent and are dedicated to our clients
+ in providing the latest in specialized maintenance and repair technology by our trained technicians.
+</p>
+<p align="justify">
+Within 48 hours or your On-line Service Request, you will also receive our next available appointment date, 
+a copy of the O.E.M. Maintenance Schedule for your unit and an itemized quote for the service requested. 
+Our next available appointment date is adjustable to meet your schedule!
+</p>
+<form action="submit.html" method="get" id="form_id"> <center>
+<input type="text" name="fname" placeholder="First Name" class="text" id="text1_id"></input>
+<input type="text" name="lname" placeholder="Last Name"class="text" id="text2_id"></input> <br><br>
+<input type="text" name="address" placeholder="Address"class="text"></input>
+<input type="text" name="city" placeholder="City"class="text"></input> <br> <br>
+<input type="text" name="province" placeholder="Province"class="text"></input>
+<input type="text" name="postal" placeholder="Postal Code"class="text"></input> <br> <br>
+<input type="email" name="email" placeholder="Email"class="text"id="text3_id"></input> 
+<input type="text" name="phone" placeholder="Phone"class="text"></input> <br></center>
+<h2 align="left"> Vehicle being serviced: </h2>
+<center> 
+<input type="text" name="make" placeholder="Make" class="text"></input>
+<input type="text" name="model" placeholder="Model" class="text"></input> <br> <br>
+<input type="text" name="year" placeholder="Year" class="text"></input>
+<input type="text" name="vin#" placeholder="Vin#" class="text"id="text4_id"></input> <br> <br>
+<input type="text" name="kms" placeholder="Kms" class="text"></input> <br> <br>
+</center>
+<p align="justify">
+<b> Please note:</b>We need your V.I.N.! Vehicle Information Numbers 
+(otherwise known as the Serial Number) is the most 
+important piece of information about your unit that you can give us! All parts used to service and or 
+repair our products are now ordered by V.I.N. to ensure the correct part is obtained for your particular model, 
+the first time! It also allows us to search your V.I.N. for any outstanding recalls so that we can keep 
+your motorcycle or ATV up to date during the service appointment you are requesting.
+</p>
+<h2> Describe Service Needs </h2>
+What service do you need? <textarea rows="3" cols="80"id="text5_id"></textarea> <br> <br>
+Preferred Appointment Date: <input type="date" name="date" id="text6_id"></input> <br> <br>
+<input type="checkbox" name="agree">Yes! I want to receive newsletters and occasional emails from Motorpedia.
+ You can opt-out at any time by clicking the "unsubscribe" link at the bottom of our emails.</input> <br> <br>
+ <center><input type="submit" name="submit" value="Submit" id="submit" onClick="return sform()"></input>
+<input type="reset" name="reset" value="Reset" id="submit" onClick="return freset()"></input> </center>
+</body>
+</html>
